@@ -1,0 +1,156 @@
+"""
+  1) Tuple are unchangeble/immutable that means we can't update,append & extend tuples element .
+  2) you can update tuples forcefuly that means converting into list and append or update element & again list convert into the tuple (: .
+  3) tuple can be store mixed primitive data-type element as well as similar also.
+  4) we can create neested tuple using , (coma) operator.
+  5) we can store seperated string element or character into tuples but we can't convert other data type.
+  6) deleting specific position of tuple
+    i) using slicing :
+    ii) using build in method remove(value_Exit_in_tuple) . but remove() if given element or value is not present in tuple then get error
+    iii) converting into list
+  7) some Built in functions are mention below 
+  
+  NOTE : if you need to add a Integer or Character or String or Decimal so the before ending of paranthesis of tuple use seprated coma operator otherwise given a datatype can't converted into tuple class
+         Example is given below
+"""
+
+
+
+fruits = ("mango","apple","banana")
+print(type(fruits))
+print(fruits)
+print(len(fruits))
+
+tup1 =("apple","orange",2018,6.3)
+print(tup1[0])
+print(tup1[:])
+# tup1[0]=10  error tuple not support assignment
+tup2 = (1,2,3,4,5,6,7)
+print(tup2[1:6])
+
+#tuple packing
+mytup = 1,2,3
+print(mytup)
+
+#tuple Unpacking
+tup = (1,2,3)
+a,b,c = tup
+print(a)
+print(b)
+print(c)
+
+#neested tuple
+tup = (4,5,6),(7,8)
+print(tup)
+
+#convert string to tuple
+s_tup = tuple('string')
+print(s_tup)
+# i = tuple(123) 
+# print(i)
+
+tup = tuple(['.com',[1,2],True])
+# tup[2]=False
+print(tup)
+
+tup = tuple(['.com',[1,2],True])
+tup[1].append(3)
+print(tup)
+
+#concat tuple
+tup = (4,None,'.com')+(6,0)+("AMM",)
+print(tup)
+
+#repeat tuple
+tup = ('www','.com')
+print(tup*4)
+
+#one element in tup
+tup = (12,)
+print(type(tup))
+
+#tuple membership
+t1 = ('a','b','c','d')
+print('a' in t1)
+print('e' in t1)
+print('g' not in t1)
+
+#itration in tuple
+name = ("Mummy","daddy")
+for i in name :
+  print("Hello"+i)
+# and also
+for i in  ("Mummy","daddy"):
+  print("Hello "+i)
+
+#delet element in tuple
+name = ("student","Enter")
+del name # delting tuple 
+# print(type(name))
+# print(type(name))
+
+#deleting tuples
+tup =('a','b','c','d','e','f','g','h',10)
+print(tup)
+print(tup[:2])
+print(tup[3:])
+#deleting specific number into the tuple without converting in list
+tup = tup[:2] + tup[3:]
+print(tup)
+# another method is converting into the list
+l = list(tup)
+l.remove('h') # giving specific value
+tup = tuple(l)
+print(tup)
+
+#add number's or character & string into the tuple in specific position
+tup = (4,6,2,8,3,1)
+tup = tup + (9,) # similer like append function
+print(tup)
+tup = tup[:5] + (15,20,25) + tup[5:] #add specific position 
+print(tup)
+#anoter Method conversion
+l = list(tup)
+l.append(30)
+tup = tuple(l)
+print(tup)
+
+#tuple to string format conversion
+tup = ('a','p','p','l','e') # int value can't convert into the string when we use .join() method
+s = ''.join(tup)
+print(s)
+print(type(s))
+
+#Buld in function in tuple's 
+# 1) cmp(tup1,tup2)
+tup1 = ('a','b','c')
+tup2 = ('d','e','f')
+print(tup1>tup2)
+print(tup1<tup2)
+print(tup1==tup2)
+del tup1,tup2
+
+# 2) len(tuple_name)
+tup = ('a','b','c')
+print(len(tup))
+
+# 3) max(tuple_name) & min(tuple_name)
+print(min(tup))
+print(max(tup))
+del tup
+
+# 4) tuple(any premitive data_type)
+ls = [1,2,3,'name']
+tup = tuple(ls)
+tup = tup + tuple("last")
+print(tup)
+print(type(tup))
+del tup
+
+# 5) tuple_name.index(int index of value)
+tup = (11,33,22,33,44,33)
+print(tup.index(33))
+
+
+# 6) tuple_name.count(int return the count of values how many time occuer's)
+print(tup.count(33))
